@@ -45,6 +45,8 @@ extra_css:
 extra_javascript:
   - assets/js/logo-link.js
   - assets/js/external-links.js
+  - path: assets/js/mermaid.js
+    type: module
 extra:
   generator: false
   social:

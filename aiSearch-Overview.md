@@ -35,9 +35,9 @@
 - [Semantic Ranker](#semantic-ranker)
 - [Scoring Profiles and Fine-Tuning](#scoring-profiles-and-fine-tuning)
 - [Skillsets](#skillsets)
-  - [Skillset Templates](#skillset-templates)
-   - [Workflow Example](#workflow-example)
-   - [OCR in Azure AI Search](#ocr-in-azure-ai-search)
+    - [Skillset Templates](#skillset-templates)
+    - [Workflow Example](#workflow-example)
+    - [OCR in Azure AI Search](#ocr-in-azure-ai-search)
 - [Schedulers](#schedulers)
 - [Cost examples](#cost-examples)
 - [Zero Trust](#zero-trust)
@@ -165,7 +165,7 @@ Search with Semantic Ranker: <br/>
 > Scoring profiles in Azure AI Search are `configurations that determine how search results are ranked based on relevance`. They allow you to customize the ranking algorithm to better suit your specific search requirements. BM25, or `Best Matching 25`, is a `ranking function used by search engines to estimate the relevance of documents to a given search query`. It’s an evolution of the TF-IDF (Term Frequency-Inverse Document Frequency) model and is part of the family of probabilistic information retrieval models.
 
 !!! note
-  Scoring profiles help fine-tune the search experience so the most relevant and useful results appear first.
+    Scoring profiles help fine-tune the search experience so the most relevant and useful results appear first.
 
 | **Key Component**       | **Description**                                                                 |
 |-------------------------|---------------------------------------------------------------------------------|

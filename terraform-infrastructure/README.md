@@ -52,17 +52,22 @@ admin_principal_id = "12345678-1234-1234-1234-1234567890ab"
 
 ## Deploy with Terraform
 
-```mermaid 
-graph TD;
-    A[az login] --> B(terraform init)
-    B --> C{Terraform provisioning stage}
-    C -->|Review| D[terraform plan]
-    C -->|Order Now| E[terraform apply]
-    C -->|Delete Resource if needed| F[terraform destroy]
+```mermaid
+flowchart TD
+  A[az login] --> B[terraform init]
+  B --> C[terraform plan]
+  C --> D{Approve the plan?}
+  D -->|Yes| E[terraform apply]
+  D -->|No| F[Revise configuration]
+  E --> G[terraform destroy when no longer needed]
 ```
 
-!!! important
-  Update `terraform.tfvars` with your environment values before running this workflow. Review the generated plan before applying or destroying infrastructure.
+<div class="admonition important" markdown="1">
+<p class="admonition-title">Important</p>
+
+Update `terraform.tfvars` with your environment values before running this workflow. Review the generated plan before applying or destroying infrastructure.
+
+</div>
 
 1. **Login to Azure**: This command logs you into your Azure account. It opens a browser window where you can enter your Azure credentials. Once logged in, you can manage your Azure resources from the command line.
 
@@ -88,36 +93,34 @@ graph TD;
 
    <img width="550" alt="img" src="https://github.com/user-attachments/assets/a7a32891-ad72-423a-a1fe-bdb50925b546" />
 
-3. **Terraform Provisioning Stage**: 
+### Review the Plan
 
-   - **Review**: Creates an execution plan, showing what actions Terraform will take to achieve the desired state defined in your configuration files. It uses the variable values specified in `terraform.tfvars`.
+Create an execution plan to review the changes Terraform will make using the values in `terraform.tfvars`.
 
-        ```sh
-        terraform plan -var-file terraform.tfvars
-        ```
+```sh
+terraform plan -var-file terraform.tfvars
+```
 
-        > At the end, you will see a message in green if everything was executed successfully: 
+<img width="550" alt="Successful Terraform plan output" src="https://github.com/user-attachments/assets/4741e863-1ccd-4f2a-a0b8-d5d1964bd890" />
 
-      <img width="550" alt="Successful Terraform plan output" src="https://github.com/user-attachments/assets/4741e863-1ccd-4f2a-a0b8-d5d1964bd890" />
+### Apply the Configuration
 
-   - **Order Now**: Applies the changes required to reach the desired state of the configuration. It prompts for confirmation before making any changes. It also uses the variable values specified in `terraform.tfvars`.
+Apply the reviewed plan. Terraform prompts for confirmation before creating or updating resources.
 
-        ```sh
-        terraform apply -var-file terraform.tfvars
-        ```
+```sh
+terraform apply -var-file terraform.tfvars
+```
 
-        > At the end, you will see a message in green if everything was executed successfully: 
+<img width="550" alt="Successful Terraform apply output" src="https://github.com/user-attachments/assets/2b32b63f-3e9f-46da-a5e9-c39360135251">
 
-      <img width="550" alt="Successful Terraform apply output" src="https://github.com/user-attachments/assets/2b32b63f-3e9f-46da-a5e9-c39360135251">
+### Remove the Infrastructure
 
-   - **Remove**: Destroys the infrastructure managed by Terraform. It prompts for confirmation before deleting any resources. It also uses the variable values specified in `terraform.tfvars`.
-    
-        ```sh
-        terraform destroy -var-file terraform.tfvars
-        ```
+Destroy the managed infrastructure when it is no longer needed. Review the deletion plan carefully before confirming.
 
-        > At the end, you will see a message in green if everything was executed successfully: 
+```sh
+terraform destroy -var-file terraform.tfvars
+```
 
-      <img width="550" alt="Successful Terraform destroy output" src="https://github.com/user-attachments/assets/f2089d03-3a3d-431d-b462-8148ef519104">
+<img width="550" alt="Successful Terraform destroy output" src="https://github.com/user-attachments/assets/f2089d03-3a3d-431d-b462-8148ef519104">
 
 [Back to the embedding model guide](https://cloud2br-msftlearninghub.github.io/Azure-Text-Embedding-Overview/)
