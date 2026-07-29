@@ -1,15 +1,7 @@
-# Azure Text Embedding Model - Overview 
+# Azure Text Embedding Models
 
-Costa Rica
-
-[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/) [Cloud2BR OSS - Learning Hub](https://github.com/Cloud2BR-MSFTLearningHub)
-
-Last updated: 2026-04-06
-
------------------------------
-
-<details>
-<summary><b>List of References</b> (Click to expand)</summary>
+<details markdown="1">
+<summary><b>References</b> (click to expand)</summary>
 
 -  [voyage-3-large: the new state-of-the-art general-purpose embedding model](https://statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html)
 -  [text-embedding-3-large](https://platform.openai.com/docs/models/text-embedding-3-large#:~:text=text-embedding-3-large%20is%20our%20most%20capable%20embedding,english%20and%20non-english%20tasks.)
@@ -23,10 +15,10 @@ Last updated: 2026-04-06
 </details>
 
 
-<details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<details markdown="1">
+<summary><b>Table of contents</b> (click to expand)</summary>
 
-- [Recommendations for Alternative & Upcoming Embedding Models in Azure](#recommendations-for-alternative--upcoming-embedding-models-in-azure)
+- [Recommendations for Alternative & Upcoming Embedding Models in Azure](#recommendations-for-alternative-upcoming-embedding-models-in-azure)
     - [Azure OpenAI](#azure-openai)
     - [Azure AI Foundry](#azure-ai-foundry)
     - [Azure Marketplace](#azure-marketplace)
@@ -37,7 +29,7 @@ Last updated: 2026-04-06
 
 ## Recommendations for Alternative & Upcoming Embedding Models in Azure
 
-> Current Options: 
+The following models are currently available across Azure OpenAI, Azure AI Foundry, and Azure Marketplace.
 
 | **Model** | **Platform** | **Strengths** | **Limitations** | **Best Use Cases** |
 |-----------|--------------|---------------|------------------|---------------------|
@@ -53,9 +45,8 @@ Last updated: 2026-04-06
 | `Cohere-embed-v3-multilingual` | Azure AI Foundry | Strong multilingual alignment, semantic robustness | Slightly slower, less tuned for English-only tasks | Multilingual indexing, global search, translation-aware retrieval |
 | `Cohere-embed-v3-english` | Azure AI Foundry | High precision for English, optimized for semantic tasks | Not suitable for multilingual content | English-centric semantic search, document clustering |
 
-> [!NOTE]
-> `Upcoming Models to Watch:`
-- **Voyage-3-Large**: Expected to outperform OpenAI v3-large with flexible dimensions and quantization. [voyage-3-large: the new state-of-the-art general-purpose embedding model](https://statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html)
+!!! note
+    **Upcoming model to watch:** Voyage 3 Large is designed as a general-purpose embedding model with flexible dimensions and quantization. Review the [Voyage 3 Large announcement](https://blog.voyageai.com/2025/01/07/voyage-3-large/) for current details.
 
 ### Azure OpenAI
 
@@ -105,11 +96,11 @@ Last updated: 2026-04-06
 
 > Azure AI Search doesn’t generate embeddings from third-party models, but it **amplifies their value** through advanced indexing, retrieval, and hybrid search capabilities.
 
-> [!TIP]
-> Use Azure AI Foundry to experiment with multiple embedding models and benchmark their performance before committing to production.
+!!! tip
+    Use Azure AI Foundry to experiment with multiple embedding models and benchmark their performance before committing to production.
 
-<details>
-<summary><b>Vector Search Capabilities</b> (Click to expand)</summary>
+<details markdown="1">
+<summary><b>Vector search capabilities</b> (click to expand)</summary>
 
 > Azure AI Search supports robust vector search features that allow you to fully leverage embeddings generated externally (e.g., from OpenAI, Voyage, Cohere):
 
@@ -126,8 +117,8 @@ Last updated: 2026-04-06
 
 </details>
 
-<details>
-<summary><b>Performance Optimization Tips</b> (Click to expand)</summary>
+<details markdown="1">
+<summary><b>Performance optimization tips</b> (click to expand)</summary>
 
 > To maximize efficiency and relevance in embedding-based search, consider these strategies:
 
@@ -140,8 +131,8 @@ Last updated: 2026-04-06
 
 </details>
 
-<details>
-<summary><b>Integration Strategy</b> (Click to expand)</summary>
+<details markdown="1">
+<summary><b>Integration strategy</b> (click to expand)</summary>
 
 > Azure AI Search is designed to integrate seamlessly with external embedding pipelines. Here's how to build a modular and scalable setup:
 
@@ -160,9 +151,4 @@ Last updated: 2026-04-06
 </details>
 
 
-<!-- START BADGE -->
-<div align="center">
-  <img src="https://img.shields.io/badge/Total%20views-1301-limegreen" alt="Total views">
-  <p>Refresh Date: 2026-04-06</p>
-</div>
-<!-- END BADGE -->
+[Continue to the Azure AI Search guide](https://cloud2br-msftlearninghub.github.io/Azure-Text-Embedding-Overview/ai-search/)

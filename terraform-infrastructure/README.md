@@ -1,18 +1,8 @@
-# Azure Infrastructure - Terraform templates for deployment 
-
-Costa Rica
-
-[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/) [Cloud2BR OSS - Learning Hub](https://github.com/Cloud2BR-MSFTLearningHub)
-
-Last updated: 2026-04-06
-
-----------
+# Azure Infrastructure with Terraform
 
 > This approach focuses on `setting up the required infrastructure via Terraform`. It allows for source control of not only the solution code, connections, and setups `but also the infrastructure itself`.
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/7356d1da-3a0d-4896-abc7-4bad1936b262" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
+<img src="https://github.com/user-attachments/assets/7356d1da-3a0d-4896-abc7-4bad1936b262" alt="Azure infrastructure deployed by the Terraform templates" />
 
 ## Prerequisites
 
@@ -22,7 +12,7 @@ Last updated: 2026-04-06
   - [Terraform is installed on your local machine](https://developer.hashicorp.com/terraform/tutorials/azure-get-started/install-cli#install-terraform).
   - [Install the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) to work with both Terraform and Azure commands.
 
-## Overview 
+## Overview
 
 Templates structure:
 
@@ -60,7 +50,7 @@ Here is an example value for `admin_principal_id` which is Object ID you retriev
 admin_principal_id = "12345678-1234-1234-1234-1234567890ab"
 ```
 
-## How to execute it 
+## Deploy with Terraform
 
 ```mermaid 
 graph TD;
@@ -71,8 +61,8 @@ graph TD;
     C -->|Delete Resource if needed| F[terraform destroy]
 ```
 
-> [!IMPORTANT]
-> Please modify `terraform.tfvars` with your information, then run the following flow. If you need more visual guidance, please check the video that illustrates the provisioning steps. 
+!!! important
+  Update `terraform.tfvars` with your environment values before running this workflow. Review the generated plan before applying or destroying infrastructure.
 
 1. **Login to Azure**: This command logs you into your Azure account. It opens a browser window where you can enter your Azure credentials. Once logged in, you can manage your Azure resources from the command line.
 
@@ -92,7 +82,7 @@ graph TD;
 
 2. **Initialize Terraform**: Initializes the working directory containing the Terraform configuration files. It downloads the necessary provider plugins and sets up the backend for storing the state.
 
-    ``` sh
+    ```sh
     terraform init
     ```
 
@@ -108,7 +98,7 @@ graph TD;
 
         > At the end, you will see a message in green if everything was executed successfully: 
 
-        <img width="550" alt="Screenshot 2025-03-18 145143" src="https://github.com/user-attachments/assets/4741e863-1ccd-4f2a-a0b8-d5d1964bd890" />
+      <img width="550" alt="Successful Terraform plan output" src="https://github.com/user-attachments/assets/4741e863-1ccd-4f2a-a0b8-d5d1964bd890" />
 
    - **Order Now**: Applies the changes required to reach the desired state of the configuration. It prompts for confirmation before making any changes. It also uses the variable values specified in `terraform.tfvars`.
 
@@ -118,7 +108,7 @@ graph TD;
 
         > At the end, you will see a message in green if everything was executed successfully: 
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/2b32b63f-3e9f-46da-a5e9-c39360135251">
+      <img width="550" alt="Successful Terraform apply output" src="https://github.com/user-attachments/assets/2b32b63f-3e9f-46da-a5e9-c39360135251">
 
    - **Remove**: Destroys the infrastructure managed by Terraform. It prompts for confirmation before deleting any resources. It also uses the variable values specified in `terraform.tfvars`.
     
@@ -128,11 +118,6 @@ graph TD;
 
         > At the end, you will see a message in green if everything was executed successfully: 
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/f2089d03-3a3d-431d-b462-8148ef519104">
+      <img width="550" alt="Successful Terraform destroy output" src="https://github.com/user-attachments/assets/f2089d03-3a3d-431d-b462-8148ef519104">
 
-<!-- START BADGE -->
-<div align="center">
-  <img src="https://img.shields.io/badge/Total%20views-1301-limegreen" alt="Total views">
-  <p>Refresh Date: 2026-04-06</p>
-</div>
-<!-- END BADGE -->
+[Back to the embedding model guide](https://cloud2br-msftlearninghub.github.io/Azure-Text-Embedding-Overview/)

@@ -1,15 +1,7 @@
-#  Azure AI Search - Overview 
+# Azure AI Search
 
-Costa Rica
-
-[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/) [Cloud2BR OSS - Learning Hub](https://github.com/Cloud2BR-MSFTLearningHub)
-
-Last updated: 2026-04-06
-
-----------
-
-<details>
-<summary><b>List of References</b> (Click to expand)</summary>
+<details markdown="1">
+<summary><b>References</b> (click to expand)</summary>
    
 - [What's Azure AI Search?](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search)
 - [Indexer overview - Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-indexer-overview)
@@ -35,15 +27,15 @@ Last updated: 2026-04-06
   
 </details>
 
-<details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<details markdown="1">
+<summary><b>Table of contents</b> (click to expand)</summary>
 
 - [Search Service](#search-service)
 - [Indexer](#indexer)
 - [Semantic Ranker](#semantic-ranker)
-- [Scoring profiles fine tune](#scoring-profiles-fine-tune)
+- [Scoring Profiles and Fine-Tuning](#scoring-profiles-and-fine-tuning)
 - [Skillsets](#skillsets)
-   - [Skillsets templates](#skillsets-templates)
+  - [Skillset Templates](#skillset-templates)
    - [Workflow Example](#workflow-example)
    - [OCR in Azure AI Search](#ocr-in-azure-ai-search)
 - [Schedulers](#schedulers)
@@ -52,7 +44,9 @@ Last updated: 2026-04-06
 
 </details>
 
-> Azure AI Search (formerly known as Azure Cognitive Search) is a powerful, enterprise-ready search and retrieval system designed for high-performance applications. It integrates advanced search technologies to support both traditional and generative AI scenarios
+## Search Service
+
+Azure AI Search, formerly known as Azure Cognitive Search, is an enterprise-ready search and retrieval system for high-performance applications. It supports traditional search and generative AI scenarios.
 
 ![image](https://github.com/brown9804/SDLC-Cloud_Lpath/assets/24630902/bdaebc61-162f-4c0f-855f-6dc74de38397)
 
@@ -75,7 +69,7 @@ Last updated: 2026-04-06
       
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/9420a863-f22c-4236-9687-9e3799af15c8">
 
-## Indexer 
+## Indexer
 
 > Indexers in Azure AI Search are tools that automatically gather and organize data from various sources into a searchable index. <br/> Indexers can be scheduled to run at regular intervals or triggered on-demand, making them flexible for various data ingestion needs
 
@@ -114,7 +108,7 @@ Last updated: 2026-04-06
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/f8cf2048-1a9f-4e89-940d-c4683061eab4">
 
-## Semantic Ranker 
+## Semantic Ranker
 
 > Semantic rankers in Azure AI Search are advanced features that improve search relevance by using Microsoft's language understanding models to re-rank search results based on their semantic meaning. `This technology is particularly useful for content-rich and descriptive data, such as knowledge bases and online documentation`.
 
@@ -166,12 +160,12 @@ Search with Semantic Ranker: <br/>
 | --- | --- | 
 | <img width="550" alt="image" src="https://github.com/user-attachments/assets/0e7ef3e5-ae9a-4891-a2e4-fa4c79127b82"> | <img width="700" alt="image" src="https://github.com/user-attachments/assets/bcf40166-01d9-493d-b109-e5c3bad4d639">|
 
-## Scoring profiles (fine tune)
+## Scoring Profiles and Fine-Tuning
 
 > Scoring profiles in Azure AI Search are `configurations that determine how search results are ranked based on relevance`. They allow you to customize the ranking algorithm to better suit your specific search requirements. BM25, or `Best Matching 25`, is a `ranking function used by search engines to estimate the relevance of documents to a given search query`. It’s an evolution of the TF-IDF (Term Frequency-Inverse Document Frequency) model and is part of the family of probabilistic information retrieval models.
 
-> [!NOTE]
-> By using scoring profiles, you can fine-tune the search experience to ensure that the most relevant and useful results are presented to users.
+!!! note
+  Scoring profiles help fine-tune the search experience so the most relevant and useful results appear first.
 
 | **Key Component**       | **Description**                                                                 |
 |-------------------------|---------------------------------------------------------------------------------|
@@ -211,7 +205,7 @@ Search with Semantic Ranker: <br/>
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/551970b5-95c1-4f45-84d3-e96d8fb8d198">
 
-## Skillsets 
+## Skillsets
 
 > Skillsets in Azure AI Search are collections of AI-powered skills that enhance and transform data during the indexing process. They are designed to enrich documents by extracting meaningful information, which can then be used to improve search relevance and user experience.
 
@@ -230,7 +224,7 @@ Search with Semantic Ranker: <br/>
 3. **Enrichment**: Skills perform various enrichment tasks, such as OCR for extracting text from images, entity recognition for identifying entities in text, and text translation.
 4. **Output Mapping**: The enriched data is mapped to the fields in the search index. This mapping determines what content is ingested into the index and how it is structured.
 
-### Skillsets templates
+### Skillset Templates
 
 > Predefined configurations that streamline the process of adding various AI capabilities to your search solutions. These templates allow you to integrate a range of AI skills, such as text analysis, image recognition, and custom machine learning models, into your search index. By using skillset templates, you can easily enhance your search functionality with features like language detection, key phrase extraction, entity recognition, and more. This helps in transforming raw content into enriched, searchable information, making it easier to derive insights and improve the overall search experience.
 
@@ -339,7 +333,7 @@ Here's how it works:
    - The OCR skill uses machine learning models from Azure AI Vision to recognize printed and handwritten text in various image formats (JPEG, PNG, BMP, TIFF).
    - The extracted text is added to the enrichment tree and can be used for further processing or directly indexed.
 
-## Schedulers 
+## Schedulers
 
 > Used to automate the execution of indexers at specified intervals. This is particularly useful when your source data changes over time or when dealing with large datasets that need to be indexed regularly.
 
@@ -351,7 +345,7 @@ Here's how it works:
 | **Configuration**   | You can configure schedules through the Azure portal, REST APIs, or Azure SDKs. In the portal, you can set the schedule by navigating to the indexer's settings and choosing the desired interval and start time. |
 | **Behavior**        | Once an indexer is scheduled, it will continue to run at the specified intervals until the schedule is cleared or the indexer is disabled. If an indexer is still running when the next scheduled execution time arrives, the pending execution is postponed until the current job finishes. |
 
-## Cost examples 
+## Cost Examples
 
 > General idea of the costs associated with different tiers and features in Azure AI Search. For a more precise estimate, you can use the [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/details/search/) to input your expected usage and get a detailed cost breakdown.
 
@@ -366,15 +360,10 @@ Here's how it works:
 | **Storage Optimized L2**  | \$5,604.21/month per SU   | Up to 10 indexes, 4 TB storage, maximum storage optimization                                          | Suitable for applications with massive storage needs and high search performance requirements        |
 | **Additional Costs**      |                    | <ul><li>**Custom Entity Lookup**: \$1 per 1,000 text records for the first million records, with decreasing rates for higher volumes</li><li>**Image Extraction**: \$1 per 1,000 images for the first million images, with decreasing rates for higher volumes</li><li>**Semantic Ranker**: First 1,000 requests per month are free, then \$1 per 1,000 additional requests</li></ul> | Applicable for specific advanced features and additional processing needs                            |
 
-## Zero Trust 
+## Zero Trust
 
 > Zero Trust AI architecture in Microsoft Azure is a `security framework designed to protect data, applications, and infrastructure by assuming that threats can come from both inside and outside the network`. This model operates on the principle of "never trust, always verify", meaning `every access request is thoroughly authenticated and authorized based on all available data points, regardless of its origin. The architecture integrates multiple layers of security, including strong identity verification, device compliance checks, and least privilege access, ensuring that only authorized users and devices can access sensitive resources`. By continuously monitoring and validating each request, Zero Trust AI architecture helps organizations minimize risks and enhance their overall security posture
 
-Click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG) for a quick guidance.
+Review the [Microsoft Zero Trust guidance](https://learn.microsoft.com/security/zero-trust/) when designing identity, network, and data controls for an AI Search solution.
 
-<!-- START BADGE -->
-<div align="center">
-  <img src="https://img.shields.io/badge/Total%20views-1301-limegreen" alt="Total views">
-  <p>Refresh Date: 2026-04-06</p>
-</div>
-<!-- END BADGE -->
+[Continue to the Terraform infrastructure guide](https://cloud2br-msftlearninghub.github.io/Azure-Text-Embedding-Overview/terraform/)

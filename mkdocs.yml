@@ -1,0 +1,58 @@
+site_name: Azure Text Embedding and AI Search Guide
+site_description: Compare Azure text embedding models, optimize retrieval with Azure AI Search, and deploy supporting infrastructure with Terraform.
+site_url: https://cloud2br-msftlearninghub.github.io/Azure-Text-Embedding-Overview/
+repo_url: https://github.com/Cloud2BR-MSFTLearningHub/Azure-Text-Embedding-Overview
+repo_name: Cloud2BR-MSFTLearningHub/Azure-Text-Embedding-Overview
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+copyright: Copyright &copy; 2026 <a href="https://github.com/Cloud2BR-MSFTLearningHub" target="_blank" rel="noopener">Cloud2BR OSS - Learning Hub</a>
+
+theme:
+  name: material
+  logo: https://avatars.githubusercontent.com/u/195347873?v=4
+  favicon: https://avatars.githubusercontent.com/u/195347873?v=4
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+  palette:
+    scheme: default
+    primary: blue
+    accent: blue
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.highlight
+  - pymdownx.snippets:
+      base_path:
+        - .
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - toc:
+      permalink: true
+
+extra_css:
+  - assets/css/custom.css
+extra_javascript:
+  - assets/js/logo-link.js
+  - assets/js/external-links.js
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Cloud2BR-MSFTLearningHub
+      name: Cloud2BR OSS - Learning Hub
+
+nav:
+  - Embedding Models: index.md
+  - Azure AI Search: ai-search.md
+  - Terraform Infrastructure: terraform.md
