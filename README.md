@@ -45,8 +45,8 @@ The following models are currently available across Azure OpenAI, Azure AI Found
 | `Cohere-embed-v3-multilingual` | Azure AI Foundry | Strong multilingual alignment, semantic robustness | Slightly slower, less tuned for English-only tasks | Multilingual indexing, global search, translation-aware retrieval |
 | `Cohere-embed-v3-english` | Azure AI Foundry | High precision for English, optimized for semantic tasks | Not suitable for multilingual content | English-centric semantic search, document clustering |
 
-!!! note
-    **Upcoming model to watch:** Voyage 3 Large is designed as a general-purpose embedding model with flexible dimensions and quantization. Review the [Voyage 3 Large announcement](https://blog.voyageai.com/2025/01/07/voyage-3-large/) for current details.
+> **Note:**
+> **Upcoming model to watch:** Voyage 3 Large is designed as a general-purpose embedding model with flexible dimensions and quantization. Review the [Voyage 3 Large announcement](https://blog.voyageai.com/2025/01/07/voyage-3-large/) for current details.
 
 ### Azure OpenAI
 
@@ -96,8 +96,8 @@ The following models are currently available across Azure OpenAI, Azure AI Found
 
 > Azure AI Search doesn’t generate embeddings from third-party models, but it **amplifies their value** through advanced indexing, retrieval, and hybrid search capabilities.
 
-!!! tip
-    Use Azure AI Foundry to experiment with multiple embedding models and benchmark their performance before committing to production.
+> **Tip:**
+> Use Azure AI Foundry to experiment with multiple embedding models and benchmark their performance before committing to production.
 
 <details markdown="1">
 <summary><b>Vector search capabilities</b> (click to expand)</summary>
